@@ -133,11 +133,14 @@ const favoriteAlbum = async function () {
 favoriteAlbum();
 
 function showAlbum() {
-  let album = document.querySelectorAll("#titoloAlbum").values;
-  let listaAlbum = [];
-  listaAlbum.push(album);
-  alert("Questi sono gli album:", listaAlbum);
-  console.log(listaAlbum);
+  let album = document.querySelectorAll("#titoloAlbum");
+  console.log(album);
+  let titoloAlbum = [];
+  album.forEach((e) => {
+    titoloAlbum.push(e);
+    return titoloAlbum;
+  });
+  alert("Questi sono gli album:", titoloAlbum);
 }
 
 let annoCorrenteSpan = document.getElementById("annoCorrente");
