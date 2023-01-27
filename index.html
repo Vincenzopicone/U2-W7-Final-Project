@@ -33,25 +33,33 @@
         </div>
       </nav>
     </header>
-    <main class="d-flex flex-column justify-content-center align-items-center p-4">
-      <h2>Il mio cantante preferito</h2>
+    <main class="d-flex flex-column justify-content-center align-items-center  p-4 bg-success">
+      <h2>MY SONGS</h2>
       <section class="my-1 d-flex justify-content-center shadow p-1 mb-5 bg-body-tertiary rounded">
         <div class="container py-4 px-0 m-0 ">
           <div class="row justify-content-center" id="container-cards">
           </div>
-      </section>      
-      <article class="d-flex flex-column justify-content-center align-items-center p-4">
-        <h2>La mia canzone preferita</h2>
+      </section>
+
+      <article class="d-flex flex-column justify-content-center align-items-center">
+        <h2>MY FAVORITE SONG</h2>         
         <div class="container py-4 px-0 m-0">
           <div class="row justify-content-center" id="container-song">
           </div>
       </article>
-      <aside class="d-flex flex-column justify-content-center align-items-center p-4">
-        <h2>I miei album preferiti</h2> 
+       
+      <aside class="d-flex flex-column justify-content-center align-items-center ">  
+        <h2>MY FAVORITE ALBUM</h2>      
         <div class="container py-4 px-0 m-0">
           <div class="row justify-content-center" id="container-carousel">
           </div>
       </aside>
+
+      <div class="d-flex justify-content-evenly align-items-center" id="container-button">
+        <button class="btn btn-dark text-light m-3" onclick="orderSong()" > ORDINA LE CANZONI</button>
+        <button class="btn btn-dark text-light m-3" onclick="showAlbum()"> MOSTRA TUTTI GLI ALBUM</button>
+        <button href="#" class="btn btn-dark text-light m-3"> TORNA IN CIMA </button>
+      </div>
     </main>
     <footer class="d-flex flex-column justify-content-center align-items-center bg-dark text-light p-4">
       <h5> Vins Music </h5> 
