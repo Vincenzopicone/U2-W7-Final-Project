@@ -1,0 +1,13 @@
+.card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+footer {
+    padding: 3% 0;
+    width: 100%;
+  }
+  footer a {
+    color: white;
+    text-decoration: none;
+  }
