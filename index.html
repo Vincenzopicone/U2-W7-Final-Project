@@ -34,7 +34,7 @@
       </nav>
     </header>
     <main class="d-flex flex-column justify-content-center align-items-center  p-4 bg-success">
-      <h2>MY SONGS</h2>
+      <h2>SONGS</h2>
       <section class="my-1 d-flex justify-content-center shadow p-1 mb-5 bg-body-tertiary rounded">
         <div class="container py-4 px-0 m-0 ">
           <div class="row justify-content-center" id="container-cards">
@@ -42,28 +42,78 @@
       </section>
 
       <article class="d-flex flex-column justify-content-center align-items-center">
-        <h2>MY FAVORITE SONG</h2>         
+        <h2>FAVOURITE SONG</h2>         
         <div class="container py-4 px-0 m-0">
           <div class="row justify-content-center" id="container-song">
           </div>
       </article>
        
       <aside class="d-flex flex-column justify-content-center align-items-center ">  
-        <h2>MY FAVORITE ALBUM</h2>      
+        <h2>FAVOURITE ALBUM</h2>      
         <div class="container py-4 px-0 m-0">
-          <div class="row justify-content-center" id="container-carousel">
+          <div class="row justify-content-center">
+            <div id="carouselExampleCaptions" class="carousel w-80">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner" id="container-carousel">
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>  
           </div>
       </aside>
 
       <div class="d-flex justify-content-evenly align-items-center" id="container-button">
-        <button class="btn btn-dark text-light m-3" onclick="orderSong()" > ORDINA LE CANZONI</button>
-        <button class="btn btn-dark text-light m-3" onclick="showAlbum()"> MOSTRA TUTTI GLI ALBUM</button>
-        <button href="#" class="btn btn-dark text-light m-3"> TORNA IN CIMA </button>
+        <button type="button" class="btn btn-dark m-2" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="arrayRank()">
+          ORDINE DI RANK
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">CANZONI IN ORDINE DI RANK</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="container-rank">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CHIUDI</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-dark m-2" data-bs-toggle="modal" data-bs-target="#exampleModal1" onclick="arrayTitoliAlbum()">
+          LISTA ALBUM
+        </button>
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">TITOLI ALBUM</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="container-title">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CHIUDI</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer class="d-flex flex-column justify-content-center align-items-center bg-dark text-light p-3">
-      <h5> VINSIFY</h5> 
-      <h6>&copy Copyright <span id="annoCorrente"></span> </h6>
+      <h4> VINSIFY</h4> 
+      <p>&copy Copyright <span id="annoCorrente"></span> </p>
       <section class="d-flex flex-column flex-md-row align-items-center justify-content-between my-1">
         <a href="tel:321-456789"><i class="bi bi-telephone-fill m-2"></i> 321-456789</a>
         <a href="mailto:vinsify@email.com"><i class="bi bi-envelope-fill m-2"></i> vinsify@email.com</a>

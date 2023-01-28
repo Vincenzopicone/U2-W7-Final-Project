@@ -14,8 +14,9 @@ const getSong = async function () {
           `  <div class="card rounded col-10 col-md-3 m-3 p-0 shadow mb-5 bg-body-tertiary ">
                   <img src="${songs[i].album.cover_big}" class="img-fluid" style="height: 60%" alt="Cover song">
                   <div class="card-body p-3 d-flex flex-column justify-content-evenly bg-dark text-light">
-                    <h5 class="card-title">${songs[i].album.title}</h5>
+                    <h5 class="card-title" id="modale">${songs[i].album.title}</h5>
                     <h3 class="card-text"> ${songs[i].artist.name}</h3>
+                    <h6 id="song-rank"> ${songs[i].rank} </h6>
                   </div>
                 </div> `;
       }
@@ -83,47 +84,31 @@ const favoriteAlbum = async function () {
       for (let i = 0; i < 1; i++) {
         contenitoreAlbum.innerHTML =
           contenitoreAlbum.innerHTML +
-          ` <div id="carouselExampleCaptions" class="carousel w-80">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+          `  <div class="carousel-item active">
               <img src="${songs1[0].album.cover_big}" class="d-block w-80" alt="Cover Album">
               <div class="carousel-caption d-block bg-secondary rounded">
-                <h5 id="titoloAlbum">${songs1[0].album.title}</h5>
+                <h5 id="modale">${songs1[0].album.title}</h5>
                 <p>${songs1[0].artist.name}</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src="${songs2[3].album.cover_big}" class="d-block w-80" alt="...">
               <div class="carousel-caption d-block bg-secondary rounded">
-                <h5 id="titoloAlbum">${songs2[3].album.title}</h5>
+                <h5 id="modale">${songs2[3].album.title}</h5>
                 <p>${songs2[3].artist.name}</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src="${songs3[1].album.cover_big}" class="d-block w-80" alt="...">
               <div class="carousel-caption d-block bg-secondary rounded">
-                <h5 id="titoloAlbum">${songs3[1].album.title}</h5>
+                <h5 id="modale">${songs3[1].album.title}</h5>
                 <p>${songs3[1].artist.name}</p>
               </div>
             </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>  `;
+          `;
       }
     } else {
-      console.log("Qualcosa non ha funzionato");
+      console.log("Qualcosa non ha funzionatoSS");
     }
   } catch (error) {
     console.log(error);
@@ -132,16 +117,24 @@ const favoriteAlbum = async function () {
 
 favoriteAlbum();
 
-function showAlbum() {
-  let album = document.querySelectorAll("#titoloAlbum");
-  console.log(album);
-  let titoloAlbum = [];
-  album.forEach((e) => {
-    titoloAlbum.push(e);
-    return titoloAlbum;
+const arrayTitoliAlbum = () => {
+  let contenitoreAlbumModale = document.getElementById("container-title");
+  let album = document.querySelectorAll("h5");
+  album.forEach((titolo) => {
+    contenitoreAlbumModale.innerHTML =
+      contenitoreAlbumModale.innerHTML + `<p> ${titolo.textContent} </p>`;
   });
-  alert("Questi sono gli album:", titoloAlbum);
-}
+};
+
+const arrayRank = () => {
+  let contenitoreRankModale = document.getElementById("container-rank");
+  let rank = document.querySelectorAll("h6");
+  rank.forEach((numero) => {
+    rank;
+    contenitoreRankModale.innerHTML =
+      contenitoreRankModale.innerHTML + `<p> ${numero.textContent} </p>`;
+  });
+};
 
 let annoCorrenteSpan = document.getElementById("annoCorrente");
 let annoCorrente = new Date().getFullYear();
